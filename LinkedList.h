@@ -16,14 +16,22 @@ class LinkedList
     };
 
 public:
+//    constructor
     LinkedList();
-    ~LinkedList();
 
+//    add item to linkedlist
     void add(string="", string="");
-    void del(const string&, Book**);
+
+//    printing the linked list
     void print() const;
 
+    bool search(string, string);
+
+//    destructor
+    ~LinkedList();
+
 private:
+//    maintaining a head and tail
     Node* head;
     Node* tail;
 

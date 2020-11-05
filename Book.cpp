@@ -15,14 +15,23 @@ Book::~Book() {}
 //  set the book attributes
 void Book::setBook(string a, string t)
 {
+    id = BookClub::getNextId();
     title = t;
     author = a;
 }
 
 void Book::print() const
 {
-    cout<<"Author of the Book: "<<author<<endl;
-    cout<<"Title of the Book: "<<title<<endl;
+    cout<<"AUTHOR is "<<author<<" & TITLE is "<<title<<endl;
 }
 
 
+string Book::get_author()
+{
+    return author;
+}
+
+string Book::get_title()
+{
+    return title;
+}

@@ -16,6 +16,9 @@ public:
 //    add member to the linked list
     void add(string = "", string = "");
 
+//    search for person in members list
+    bool search(string = "", string = "");
+
 //    print the members of the dynamic list
     void print() const;
 

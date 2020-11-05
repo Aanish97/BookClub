@@ -26,9 +26,22 @@ void DynamicListofMembers::add(string fn, string ln)
 // printing all the members in the dynamic list
 void DynamicListofMembers::print() const
 {
-    cout<<"Members of the Book Club"<<endl;
+    cout<<endl<<"*** Members of the Book Club ***"<<endl;
     for (int i = 0; i < counter; ++i)
     {
         list_members[i].print();
     }
+    cout<<endl;
+}
+
+bool DynamicListofMembers::search(string f, string l)
+{
+    for (int i = 0; i < counter; ++i)
+    {
+        if (list_members[i].get_firstname() == f && list_members[i].get_lastname() == l)
+        {
+            return true;
+        }
+    }
+    return false;
 }

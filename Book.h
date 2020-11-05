@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "BookClub.h"
 using namespace std;
 
 class Book
@@ -18,9 +19,14 @@ public:
 //    add item to Book list
     void setBook(string="", string="");
 
+    string get_author();
+
+    string get_title();
+
     void print() const;
 
 private:
+    int id;
     string title;
     string author;
 

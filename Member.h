@@ -3,14 +3,15 @@
 
 #include <iostream>
 #include <string>
+#include "BookClub.h"
 using namespace std;
 
-class Member
+class Member: public BookClub
 {
 
 public:
 //    constructor
-    Member();
+    Member(string="", string="");
 
 //    destructor
     ~Member();
@@ -18,9 +19,14 @@ public:
 //    add item to member list
     void setMember(string="", string="");
 
+    string get_firstname();
+
+    string get_lastname();
+
     void print() const;
 
 private:
+    int id;
     string first_name;
     string last_name;
 //    linked list of ratings of books
