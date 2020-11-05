@@ -83,4 +83,17 @@ bool LinkedList::search(string a, string t)
     return false;
 }
 
+int LinkedList::get_length()
+{
+    int len = 0;
+    Node* temp = head;
+
+    while(temp != NULL)
+    {
+        len++;
+        temp = temp->next;
+    }
+    return len;
+}
+
 #endif
