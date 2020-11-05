@@ -1,9 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Control.h"
-#include "DynamicListofMembers.h"
-#include "StaticListofRatings.h"
-#include "LinkedList.h"
+#include "BookClub.h"
 #include "View.h"
 using namespace std;
 

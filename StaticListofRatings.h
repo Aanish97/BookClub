@@ -8,6 +8,13 @@ using namespace std;
 
 class StaticListofRatings
 {
+    class RecordingRate
+    {
+    public:
+        string book_name;
+        int score;
+        int count;
+    };
 
 public:
 //    constructor
@@ -18,6 +25,9 @@ public:
 
 //    printing the linked list
     void print() const;
+
+//    the best rated book
+    void best_most_rated();
 
 //    destructor
     ~StaticListofRatings();

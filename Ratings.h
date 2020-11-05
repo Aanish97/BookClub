@@ -27,6 +27,10 @@ public:
 
     void print() const;
 
+    Book getBook();
+
+    int getRating();
+
 private:
     int id;
     Member member;

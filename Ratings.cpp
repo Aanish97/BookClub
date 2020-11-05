@@ -39,3 +39,12 @@ void Ratings::print() const
 Ratings::~Ratings()
 {
 }
+
+Book Ratings::getBook()
+{
+    return book;
+}
+int Ratings::getRating()
+{
+    return rating;
+}

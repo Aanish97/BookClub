@@ -7,7 +7,7 @@ using namespace std;
 
 void View::most_rated_and_best_rated(StaticListofRatings ratings)
 {
-
+    ratings.best_most_rated();
 }
 
 void View::rate_book(DynamicListofMembers members, LinkedList books, StaticListofRatings ratings) const
@@ -115,8 +115,8 @@ void View::menu(DynamicListofMembers members, LinkedList books, StaticListofRati
         cout<<"2. Print the data for all the books in the book club"<<endl;
         cout<<"3. Enter rating for book"<<endl;
         cout<<"4. Compute and print best rated and most rated book"<<endl;
-        cout<<"5. Exit the program"<<endl;
-        cout<<"Enter your choice (1,2,3,4,5): ";
+        cout<<"   Exit the program"<<endl;
+        cout<<"Enter your choice (1,2,3,4) {press any key to exit}: ";
         cin>>choice;
 
         if(choice == 1)
@@ -135,14 +135,9 @@ void View::menu(DynamicListofMembers members, LinkedList books, StaticListofRati
         {
             most_rated_and_best_rated(ratings);
         }
-        else if (choice == 5)
-        {
-            exit(0);
-        }
         else
         {
-            cout<<"Please enter a number between (1,2,3,4,5)"<<endl;
-            cin>>choice;
+            exit(0);
         }
     }
 }

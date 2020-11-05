@@ -25,6 +25,8 @@ public:
 //    printing the linked list
     void print() const;
 
+    int get_length();
+
     bool search(string, string);
 
 //    destructor
