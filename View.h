@@ -25,7 +25,7 @@ public:
 
     void print_all_books(LinkedList) const;
 
-    void rate_book(DynamicListofMembers, LinkedList) const;
+    void rate_book(DynamicListofMembers, LinkedList, StaticListofRatings) const;
 
     void most_rated_and_best_rated(StaticListofRatings);
 

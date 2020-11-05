@@ -10,29 +10,74 @@ void View::most_rated_and_best_rated(StaticListofRatings ratings)
 
 }
 
-void View::rate_book(DynamicListofMembers members, LinkedList books) const
+void View::rate_book(DynamicListofMembers members, LinkedList books, StaticListofRatings ratings) const
 {
-    string fname, lname, auth, tit;
+    string fname = "";
+    string lname = "";
+    string auth = "";
+    string tit = "";
+    int rating = -1;
 
-    cout<<"Enter your first name: ";
-    cin>>fname;
+    while(fname=="")
+    {
+        cout<<"Enter your first name: ";
+        cin>>fname;
+        if (fname=="")
+        {
+            cout<<"please enter a name";
+        }
+    }
 
-    cout<<"Enter yuor last name: ";
-    cin>>lname;
+    while(lname=="")
+    {
+        cout<<"Enter your last name: ";
+        cin>>lname;
+        if (lname=="")
+        {
+            cout<<"please enter a name";
+        }
+    }
 
 //    meaning that the he is a member of the book club
     if (members.search(fname, lname))
     {
-        cout<<"Enter name of the author: ";
-        cin>>auth;
+        while(auth=="")
+        {
+            getline (cin, auth);
+            cout<<"Enter name of the author: ";
+            getline (cin, auth);
+            if (auth=="")
+            {
+                cout<<"please enter a author"<<endl;
+            }
+        }
 
-        cout<<"Enter the title of the book: ";
-        cin>>tit;
+        while(tit=="")
+        {
+            cout<<"Enter the title of the book: ";
+            getline (cin, tit);
+            if (tit=="")
+            {
+                cout<<"please enter a title"<<endl;
+            }
+        }
 
         if (books.search(auth, tit))
         {
 //        the person is a member and his entered book exists
 
+            while(rating > 10 || rating < 0)
+            {
+                cout<<"Please enter the rating"<<endl;
+                cin>>rating;
+                if (rating > 10 || rating < 0)
+                {
+                    cout<<"{ please enter a rating between 0 and 10 (inclusive) }"<<endl;
+                }
+            }
+
+            ratings.add(Member(fname, lname), Book(auth, tit), rating);
+            cout<<"+ Rating added"<<endl;
         }
         else
         {
@@ -84,7 +129,7 @@ void View::menu(DynamicListofMembers members, LinkedList books, StaticListofRati
         }
         else if(choice == 3)
         {
-            rate_book(members, books);
+            rate_book(members, books, ratings);
         }
         else if(choice == 4)
         {
